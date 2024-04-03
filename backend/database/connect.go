@@ -1,6 +1,7 @@
 package database
 
 import (
+	"backend/models"
 	"fmt"
 	"log"
 	"os"
@@ -21,5 +22,6 @@ func ConnectDB() {
 		log.Fatal("Failed to connect to databse")
 	}
 	fmt.Println("Successfully connected to PostgreSQL")
-	// db.AutoMigrate(&domain.Product{}, &domain.User{}, &domain.Blog{}, &domain.Comment{})
+	DB.AutoMigrate(&models.User{})
+
 }
