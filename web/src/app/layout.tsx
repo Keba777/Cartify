@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Jost } from "next/font/google";
+import { Jost } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/common/NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
 const jost = Jost({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
