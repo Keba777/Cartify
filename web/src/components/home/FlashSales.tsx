@@ -7,7 +7,7 @@ import appleWatch from "@/../public/assets/flashSales/appleWatch.svg";
 
 const FlashSales = () => {
   return (
-    <section className="px-4 sm:px-10 md:px-16 lg:px-20 xl:px-24 my-6">
+    <section className="px-4 sm:px-10 md:px-16 lg:px-24  my-6">
       <h2 className="text-primary text-3xl font-bold flex justify-center mb-8">
         Best Deals
       </h2>
