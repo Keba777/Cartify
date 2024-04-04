@@ -10,6 +10,7 @@ import (
 func UserRouter(r *gin.Engine) {
 	r.POST("/api/signup", controllers.SignUp)
 	r.POST("/api/login", controllers.Login)
+	r.GET("api/users/:id", controllers.GetUserById)
 
 	r.POST("/api/upload", middlewares.FileUploadMiddleware(), controllers.UploadImage)
 }

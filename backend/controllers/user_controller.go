@@ -7,6 +7,7 @@ import (
 	"mime/multipart"
 	"net/http"
 	"os"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
@@ -21,6 +22,12 @@ func SignUp(c *gin.Context) {
 		return
 	}
 
+	existingUser := repositories.GetUserByEmail(user.Email)
+	if existingUser.ID != 0 {
+		c.JSON(http.StatusConflict, gin.H{"error": "User already exists"})
+		return
+	}
+
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to hash password"})
@@ -29,7 +36,12 @@ func SignUp(c *gin.Context) {
 	user.Password = string(hashedPassword)
 
 	repositories.AddUser(&user)
-	c.JSON(http.StatusOK, gin.H{"message": "User created successfully"})
+	createdUser := models.User{
+		ID:    user.ID,
+		Email: user.Email,
+		Name:  user.Name,
+	}
+	c.JSON(http.StatusOK, createdUser)
 }
 
 func Login(c *gin.Context) {
@@ -63,6 +75,22 @@ func Login(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"token": tokenString})
 }
 
+func GetUserById(c *gin.Context) {
+	userId := c.Param("id")
+	id, err := strconv.ParseUint(userId, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID"})
+		return
+	}
+
+	user := repositories.GetUserById(int(id))
+	if user.ID == 0 {
+		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
+		return
+	}
+	c.JSON(http.StatusOK, user)
+}
+
 func UploadImage(c *gin.Context) {
 
 	filename, ok := c.Get("filePath")
@@ -82,5 +110,5 @@ func UploadImage(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"data": imageUrl})
-	return
+
 }
