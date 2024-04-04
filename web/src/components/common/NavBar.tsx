@@ -15,12 +15,12 @@ const links = [
 const NavBar = () => {
   return (
     <nav className="flex justify-between items-center px-5 py-2 text-primary">
-      <div className="flex space-x-24">
-        <Link href="/">
-          <Image src={logo} alt="Logo" className="w-28 " />
+      <div className="flex md:space-x-24">
+        <Link href="/" className="m-0">
+          <Image src={logo} alt="Logo" className="w-28 sm:w-32 " />
         </Link>
 
-        <ul className="flex items-center space-x-5 font-semibold">
+        <ul className="invisible md:visible flex items-center md:space-x-5 font-semibold">
           {links.map((link) => (
             <li key={link.label}>
               <Link href={link.href}>{link.label}</Link>
