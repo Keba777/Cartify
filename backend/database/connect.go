@@ -22,6 +22,6 @@ func ConnectDB() {
 		log.Fatal("Failed to connect to databse")
 	}
 	fmt.Println("Successfully connected to PostgreSQL")
-	DB.AutoMigrate(&models.User{})
+	DB.AutoMigrate(&models.User{}, &models.Product{})
 
 }

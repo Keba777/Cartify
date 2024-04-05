@@ -8,14 +8,14 @@ import (
 
 func FileUploadMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		file, header, err := c.Request.FormFile("file")
+		file, header, err := c.Request.FormFile("image")
 		if err != nil {
 			c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
-				"error": "Bad request",
+				"error": "Bad request ",
 			})
 			return
 		}
-		defer file.Close() // close file properly
+		defer file.Close() 
 
 		c.Set("filePath", header.Filename)
 		c.Set("file", file)
