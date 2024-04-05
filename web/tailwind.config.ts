@@ -13,6 +13,7 @@ const config: Config = {
         secondary: "#424242",
         accent: "#FF705C",
         bluegray: "#6C7E99",
+        lightbluegray: "#7E92B2",
         light: "#C4C4C4",
         danger: "#FF705C",
         background: "#EEEEEE",
