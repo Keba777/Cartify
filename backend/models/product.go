@@ -1,13 +1,13 @@
 package models
 
 type Product struct {
-	ID       uint     `gorm:"primaryKey"`
-	Name     string   `gorm:"not null"`
-	Price    float64  `gorm:"not null"`
-	Brand    string   `gorm:"not null"`
-	Target   Target   `gorm:"not null"`
-	Category Category `gorm:"not null"`
-	Image    string   `gorm:"not null"`
+	ID       uint     `json:"id" gorm:"primaryKey"`
+	Name     string   `json:"name" gorm:"not null"`
+	Price    float64  `json:"price" gorm:"not null"`
+	Brand    string   `json:"brand" gorm:"not null"`
+	Target   Target   `json:"target" gorm:"not null"`
+	Category Category `json:"category" gorm:"not null"`
+	Image    string   `json:"image" gorm:"not null"`
 }
 
 type Target string

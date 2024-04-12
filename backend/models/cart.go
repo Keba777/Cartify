@@ -1,8 +1,8 @@
 package models
 
 type Cart struct {
-	ID        uint `gorm:"primaryKey"`
-	UserID    uint `gorm:"not null"`
-	ProductID uint `gorm:"not null"`
-	Quantity  uint `gorm:"not null;default:1"`
+	ID        uint `json:"id" gorm:"primaryKey"`
+	UserID    uint `json:"userID" gorm:"not null"`
+	ProductID uint `json:"productID" gorm:"not null"`
+	Quantity  uint `json:"quantity" gorm:"not null;default:1"`
 }

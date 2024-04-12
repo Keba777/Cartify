@@ -13,6 +13,6 @@ func init() {
 
 func main() {
 	router := gin.Default()
-	routes.UserRouter(router)
+	routes.GetRouter(router)
 	router.Run()
 }
