@@ -29,9 +29,9 @@ func UpdateCart(cart *models.Cart) error {
 	return nil
 }
 
-func DeleteCart(id uint) error {
+func DeleteCart(cartID uint) error {
 	db := database.DB
-	if err := db.Delete(&models.Cart{}, id).Error; err != nil {
+	if err := db.Delete(&models.Cart{}, cartID).Error; err != nil {
 		return err
 	}
 	return nil

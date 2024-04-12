@@ -74,8 +74,8 @@ func Login(c *gin.Context) {
 }
 
 func GetUserById(c *gin.Context) {
-	userId := c.Param("id")
-	id, err := strconv.ParseUint(userId, 10, 64)
+	userID := c.Param("userID")
+	id, err := strconv.ParseUint(userID, 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID"})
 		return

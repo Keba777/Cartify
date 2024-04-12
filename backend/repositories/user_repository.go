@@ -42,7 +42,7 @@ func DeleteUser(user *models.User) {
 	db.Delete(user)
 }
 
-func DeleteUserById(id int) {
+func DeleteUserById(userID int) {
 	db := database.DB
-	db.Delete(&models.User{}, id)
+	db.Delete(&models.User{}, userID)
 }

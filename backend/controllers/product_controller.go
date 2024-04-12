@@ -21,8 +21,8 @@ func GetAllProducts(c *gin.Context) {
 }
 
 func GetProductById(c *gin.Context) {
-	productId := c.Param("id")
-	id, err := strconv.ParseUint(productId, 10, 64)
+	productID := c.Param("productID")
+	id, err := strconv.ParseUint(productID, 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid product ID"})
 		return

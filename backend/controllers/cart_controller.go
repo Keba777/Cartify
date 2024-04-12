@@ -58,14 +58,14 @@ func UpdateCart(c *gin.Context) {
 }
 
 func DeleteCart(c *gin.Context) {
-	idParam := c.Param("id")
-	id, err := strconv.ParseUint(idParam, 10, 64)
+	idParam := c.Param("cartID")
+	cartID, err := strconv.ParseUint(idParam, 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid cart ID"})
 		return
 	}
 
-	if err := repositories.DeleteCart(uint(id)); err != nil {
+	if err := repositories.DeleteCart(uint(cartID)); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete cart"})
 		return
 	}

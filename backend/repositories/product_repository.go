@@ -21,9 +21,9 @@ func AddProduct(product *models.Product) error {
 	return nil
 }
 
-func GetProductById(id int) models.Product {
+func GetProductById(productID int) models.Product {
 	db := database.DB
 	var product models.Product
-	db.First(&product, id)
+	db.First(&product, productID)
 	return product
 }
