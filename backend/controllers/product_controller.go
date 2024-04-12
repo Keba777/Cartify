@@ -28,7 +28,7 @@ func GetProductById(c *gin.Context) {
 		return
 	}
 
-	product := repositories.GetUserById(int(id))
+	product := repositories.GetProductById(int(id))
 	if product.ID == 0 {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Product not found"})
 		return

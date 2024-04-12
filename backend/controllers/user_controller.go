@@ -88,25 +88,3 @@ func GetUserById(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, user)
 }
-
-// func UploadImage(c *gin.Context) {
-
-// 	filename, ok := c.Get("filePath")
-// 	if !ok {
-// 		c.JSON(http.StatusBadRequest, gin.H{"error": "filename not found"})
-// 	}
-
-// 	file, ok := c.Get("file")
-// 	if !ok {
-// 		c.JSON(http.StatusBadRequest, gin.H{"error": "file not found"})
-// 		return
-// 	}
-// 	imageUrl, err := utils.UploadToCloudinary(file.(multipart.File), filename.(string))
-// 	if err != nil {
-// 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-// 		return
-// 	}
-
-// 	c.JSON(http.StatusOK, gin.H{"data": imageUrl})
-
-// }
