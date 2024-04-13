@@ -1,29 +1,30 @@
-// import User from "@/types/auth/user";
-// import UserCredential, { UserResponse } from "@/types/auth/userCredential";
-// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-// const authApi = createApi({
-//   reducerPath: "auth-api",
-//   baseQuery: fetchBaseQuery({
-//     baseUrl: "https://byte-blog-api.onrender.com/api",
-//   }),
-//   endpoints: (build) => ({
-//     registerUser: build.mutation<User, FormData>({
-//       query: (body) => ({
-//         url: "users",
-//         method: "Post",
-//         body,
-//       }),
-//     }),
-//     loginUser: build.mutation<UserResponse, UserCredential>({
-//       query: (body) => ({
-//         url: "auth",
-//         method: "Post",
-//         body,
-//       }),
-//     }),
-//   }),
-// });
+const authApi = createApi({
+  reducerPath: "authApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:5000/api/",
+  }),
+  tagTypes: ["User"],
+  endpoints: (build) => ({
+    registerUser: build.mutation({
+      query: (body) => ({
+        url: "signup",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["User"],
+    }),
+    loginUser: build.mutation({
+      query: (body) => ({
+        url: "login",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["User"],
+    }),
+  }),
+});
 
-// export const { useRegisterUserMutation, useLoginUserMutation } = authApi;
-// export default authApi;
+export const { useRegisterUserMutation, useLoginUserMutation } = authApi;
+export default authApi;
