@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { store } from "../store";
 import { CookiesProvider } from "react-cookie";
 
-export default function StoreProvider({
+export default function AppProvider({
   children,
 }: {
   children: React.ReactNode;
