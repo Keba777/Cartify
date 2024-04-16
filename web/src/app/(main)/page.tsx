@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <Category />
       {/* <p>{cookies?.user?.name}</p> */}
       <FlashSales />
+      <Category />
     </div>
   );
 }

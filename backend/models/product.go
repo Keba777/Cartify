@@ -22,5 +22,5 @@ type Category string
 const (
 	Clothing Category = "clothing"
 	Shoes    Category = "shoes"
-	Watch    Category = "watch"
+	Accessory    Category = "accessory"
 )
