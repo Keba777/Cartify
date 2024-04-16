@@ -14,7 +14,7 @@ import { useState } from "react";
 const LoginPage = () => {
   const [loginUser] = useLoginUserMutation();
   const router = useRouter();
-  const [cookies, setCookie] = useCookies(["user", "token"]); // Use useCookies hook
+  const [cookies, setCookie] = useCookies(["user", "token"]);
 
   const [formError, setFormError] = useState("");
 
@@ -29,16 +29,11 @@ const LoginPage = () => {
       }
     } else {
       setCookie("user", JSON.stringify(res.data.user), {
-        // Use setCookie function
         secure: true,
       });
       setCookie("token", res.data.token, {
-        // Use setCookie function
-
         secure: true,
       });
-      console.log("Registration successful.", res.data);
-
       router.push("/");
     }
   };

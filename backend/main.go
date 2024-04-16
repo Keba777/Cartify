@@ -8,11 +8,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func init() {
-	database.ConnectDB()
-}
-
 func main() {
+	database.ConnectDB()
 	router := gin.Default()
 	router.Use(cors.Default())
 	routes.GetRouter(router)

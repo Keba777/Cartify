@@ -27,3 +27,11 @@ func GetProductById(productID int) models.Product {
 	db.First(&product, productID)
 	return product
 }
+
+func DeleteProduct(productID uint) error {
+	db := database.DB
+	if err := db.Delete(&models.Product{}, productID).Error; err != nil {
+		return err
+	}
+	return nil
+}

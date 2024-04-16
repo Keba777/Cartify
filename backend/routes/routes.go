@@ -13,9 +13,10 @@ func GetRouter(r *gin.Engine) {
 
 	productRouter := r.Group("/api/products")
 	{
-		productRouter.POST("/", middlewares.FileUploadMiddleware(), controllers.AddProduct)
-		productRouter.GET("/", controllers.GetAllProducts)
+		productRouter.POST("", middlewares.FileUploadMiddleware(), controllers.AddProduct)
+		productRouter.GET("", controllers.GetAllProducts)
 		productRouter.GET("/:productID", controllers.GetProductById)
+		productRouter.DELETE("/:productID", controllers.DeleteProduct)
 	}
 
 	r.Use(middlewares.AuthMiddleware())
@@ -29,7 +30,7 @@ func GetRouter(r *gin.Engine) {
 
 	cartRouter := r.Group("/api/carts")
 	{
-		cartRouter.POST("/", controllers.CreateCart)
+		cartRouter.POST("", controllers.CreateCart)
 		cartRouter.GET("/:userID", controllers.GetCartByUserID)
 		cartRouter.DELETE("/:cartID", controllers.DeleteCart)
 	}
