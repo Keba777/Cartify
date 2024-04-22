@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
-import AppProvider from "./Provider";
+import App from "./App";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={jost.className}>
-        <AppProvider>{children}</AppProvider>
+        <App>{children}</App>
       </body>
     </html>
   );

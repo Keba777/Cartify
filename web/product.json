@@ -1,0 +1,128 @@
+[
+  {
+    "id": 6,
+    "name": "Nike G.T Cut 3",
+    "price": 190,
+    "brand": "Nike",
+    "target": "men",
+    "category": "shoes",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713252842/lebron-xxi-basketball-shoes-3zkL8z.png.webp"
+  },
+  {
+    "id": 7,
+    "name": "Nike Air VaporMax Plus",
+    "price": 210,
+    "brand": "Nike",
+    "target": "women",
+    "category": "shoes",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713253186/air-vapormax-plus-womens-shoes-xbt7zf.png.webp"
+  },
+  {
+    "id": 8,
+    "name": "Nike Free Metcon 5",
+    "price": 120,
+    "brand": "Nike",
+    "target": "women",
+    "category": "shoes",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713253563/free-metcon-5-womens-workout-shoes-h4Zl5h.png.webp"
+  },
+  {
+    "id": 9,
+    "name": "Nike Dunk Low Retro SE",
+    "price": 125,
+    "brand": "Nike",
+    "target": "men",
+    "category": "shoes",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713254090/dunk-low-retro-se-mens-shoes-88bBhk.png.webp"
+  },
+  {
+    "id": 10,
+    "name": "Crew-Neck Sweatshirt",
+    "price": 37.97,
+    "brand": "Nike",
+    "target": "men",
+    "category": "clothing",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713254383/soccer-mens-crew-neck-sweatshirt-cPwwvv.png.webp"
+  },
+  {
+    "id": 11,
+    "name": "Pullover Hoodie",
+    "price": 39.97,
+    "brand": "Nike",
+    "target": "women",
+    "category": "clothing",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713255432/soccer-womens-pullover-hoodie-B8dNwk.png.webp"
+  },
+  {
+    "id": 12,
+    "name": "Textured Comfort Trouser",
+    "price": 46.43,
+    "brand": "Zara",
+    "target": "men",
+    "category": "clothing",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713256145/08574449800-e1.jpg.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Spray-Effect Printed T-shirt",
+    "price": 22.95,
+    "brand": "Zara",
+    "target": "men",
+    "category": "clothing",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713256427/05644875250-e1.jpg.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Straight Fit Jeans",
+    "price": 40.31,
+    "brand": "Zara",
+    "target": "men",
+    "category": "clothing",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713256549/08307401427-e1.jpg.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Short Textured Jackat",
+    "price": 59.95,
+    "brand": "Zara",
+    "target": "women",
+    "category": "clothing",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713256978/02225546055-e1.jpg.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Contrast Mini Dress",
+    "price": 36.54,
+    "brand": "Zara",
+    "target": "women",
+    "category": "clothing",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713257136/03897070800-e1.jpg.jpg"
+  },
+  {
+    "id": 17,
+    "name": "ZW Collection Jeans",
+    "price": 46.95,
+    "brand": "Zara",
+    "target": "women",
+    "category": "clothing",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713257358/09863053406-e1.jpg.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Geometric Heeled Boots",
+    "price": 39.95,
+    "brand": "Zara",
+    "target": "women",
+    "category": "shoes",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713257701/13233010183-e1.jpg.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Rhinestone Ballet Flat",
+    "price": 26.13,
+    "brand": "Zara",
+    "target": "women",
+    "category": "shoes",
+    "image": "https://res.cloudinary.com/dexcvckq6/image/upload/v1713257929/13523310004-e1.jpg.jpg"
+  }
+]

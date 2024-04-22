@@ -5,18 +5,20 @@ import LoginForm from "@/components/auth/LoginForm";
 import ErrorAlert from "@/components/common/ErrorAlert";
 import { useLoginUserMutation } from "@/store/features/auth";
 import User from "@/types/user";
-import { useCookies } from "react-cookie"; // Import useCookies hook from react-cookie
+import { useCookies } from "react-cookie";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setError, setUser } from "@/store/slices/authSlice";
 
 const LoginPage = () => {
   const [loginUser] = useLoginUserMutation();
   const router = useRouter();
   const [cookies, setCookie] = useCookies(["user", "token"]);
-
   const [formError, setFormError] = useState("");
+  const dispatch = useDispatch(); 
 
   const onSubmit = async (data: User) => {
     let res = await loginUser(data);
@@ -24,16 +26,15 @@ const LoginPage = () => {
       if ("status" in res.error) {
         let errorData = res.error.data as { message: string };
         setFormError(errorData.message);
+        dispatch(setError(errorData.message)); 
       } else {
         setFormError(res.error.message!);
+        dispatch(setError(res.error.message!)); 
       }
     } else {
-      setCookie("user", JSON.stringify(res.data.user), {
-        secure: true,
-      });
-      setCookie("token", res.data.token, {
-        secure: true,
-      });
+      dispatch(setUser({ user: res.data.user, token: res.data.token })); 
+      setCookie("user", JSON.stringify(res.data.user), { secure: true });
+      setCookie("token", res.data.token, { secure: true });
       router.push("/");
     }
   };
